@@ -5,8 +5,15 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '1.3.8'
+# Use PostgreSQL as the database for Active Record
+gem 'pg', '0.15.1'
+
+group :production do
+
+	# Use 12Factor Gem
+	gem 'rails_12factor', '0.0.2'
+
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.1'
@@ -31,8 +38,11 @@ gem 'jbuilder', '1.0.2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', '0.3.20' require: false
+  gem 'sdoc', '0.3.20', require: false
 end
+
+# Correcting the redline error
+gem 'rb-read\-line', '~> 0.4.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
